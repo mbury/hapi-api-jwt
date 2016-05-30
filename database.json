@@ -1,0 +1,17 @@
+{
+  "create": {
+    "driver": "mysql",
+    "host": "mysql",
+    "user": "root",
+    "password": "password",
+    "multipleStatements": true
+  },
+  "test": {
+    "driver": "mysql",
+    "host": "mysql",
+    "user": "root",
+    "password": "password",
+    "database": "testDB",
+    "multipleStatements": true
+  }
+}

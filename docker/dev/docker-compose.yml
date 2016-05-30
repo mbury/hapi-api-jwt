@@ -1,0 +1,23 @@
+version: '2'
+
+volumes:
+  cache:
+    external: true
+
+services:
+  test:
+    build:
+      context: ../../
+      dockerfile: docker/dev/Dockerfile
+    depends_on:
+      - mysql
+    volumes:
+      - cache:/cache
+      - cache:/application/node_modules
+  mysql:
+    image: mysql:5.6
+    hostname: mysql
+    expose:
+      - "3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
